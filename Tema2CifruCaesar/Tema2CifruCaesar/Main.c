@@ -5,7 +5,7 @@ int main()
 	int alegere;
 	int key;
 	char mesaj[100];
-	int i;
+	//int i;
 
 	while (1)
 	{		
@@ -14,12 +14,12 @@ int main()
 		scanf_s("%d", &alegere);
 
 		if (alegere == 1) {
-			printf("Introduceti mesajul pentru decriptare: ");
+			printf("Introduceti mesajul: ");
 			scanf_s("%s", &mesaj, sizeof(mesaj));
 			printf("Introduceti cheia: ");
 			scanf_s("%d", &key);
 
-			for (i = 0; i < strlen(mesaj); ++i)
+			for (int i = 0; i < strlen(mesaj); ++i)
 			{			
 				if (mesaj[i] + key < 'z') {
 					printf("%c", mesaj[i] + key);
@@ -32,12 +32,12 @@ int main()
 			}
 		}
 		else if(alegere==2){
-			printf("Introduceti mesajul criptat: ");
+			printf("Introduceti mesajul: ");
 			scanf_s("%s", &mesaj, sizeof(mesaj));
-			printf("Introduceti cheia de deplasare: ");
+			printf("Introduceti cheia: ");
 			scanf_s("%d", &key);
 
-			for (i = 0; i < strlen(mesaj); ++i)
+			for (int i = 0; i < strlen(mesaj); ++i)
 			{			
 				 if (mesaj[i] + key > 'a') {
 					printf("%c", mesaj[i] - key);
