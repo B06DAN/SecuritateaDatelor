@@ -1,14 +1,13 @@
 #include <stdio.h>
 
+
 int main()
 {
-	int alegere;
-	int key;
+	int alegere,key;
 	char mesaj[100];
-	//int i;
-
 	while (1)
 	{		
+		printf("\n");
 		printf("1) CRIPTARE \n");
 		printf("2) DECRIPTARE \n");
 		scanf_s("%d", &alegere);
@@ -18,16 +17,14 @@ int main()
 			scanf_s("%s", &mesaj, sizeof(mesaj));
 			printf("Introduceti cheia: ");
 			scanf_s("%d", &key);
-
+			printf("Mesajul \"%s\" criptat cu cheia %d este: ", &mesaj, key);
 			for (int i = 0; i < strlen(mesaj); ++i)
 			{			
 				if (mesaj[i] + key < 'z') {
 					printf("%c", mesaj[i] + key);
-					printf("\n");
 				}
 				else if (mesaj[i] + key > 'z') {
 					printf("%c", (mesaj[i] + key) - 26);
-					printf("\n");
 				}
 			}
 		}
@@ -36,23 +33,19 @@ int main()
 			scanf_s("%s", &mesaj, sizeof(mesaj));
 			printf("Introduceti cheia: ");
 			scanf_s("%d", &key);
-
+			printf("Mesajul \"%s\" decriptat cu cheia %d este: ", &mesaj, key);
 			for (int i = 0; i < strlen(mesaj); ++i)
 			{			
 				 if (mesaj[i] + key > 'a') {
 					printf("%c", mesaj[i] - key);
-					printf("\n");
 				}
 				else if (mesaj[i] + key < 'a') {
 					printf("%c", (mesaj[i] - key) + 26);
-					printf("\n");
 				}
-
 			}
 		}
 		else {
 			printf("Alegeti dintre 1 si 2 \n");
 		}
 	}
-	return 0;
 }
